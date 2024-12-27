@@ -2,25 +2,33 @@ const express = require("express")
 
 const app = express()    //instace of express js application 
 
-app.use("/sant_dhnyneshwar" ,(req,res)=>{
-    res.send("sant dhnyneshwar ")
+
+app.get("/abc/:age/:rollno",(req,resp)=>{
+    console.log(req.params)
+    resp.send({firstname:"shrayash",lastname:"gawade"})
 })
 
-app.use("/ganesh",(req,res)=>{
-    res.send("ganesh shet  ")
+
+app.post("/user",(req,resp)=>{
+    // saving data to db 
+    resp.send("data saved sucessfully")
 })
 
-app.use("/swami",(req,res)=>{
-    res.send("swami samarth")
+app.delete("/user",(req,resp)=>{
+    resp.send("deleted shet ")
 })
 
-app.use("/sant_tukaram",(req,res)=>{
-    res.send("sant tukaram")
-})
+// app.use("/",(req,res)=>{
+//     res.send("sant dhnyneshwar , ganesh shet , swami samarth , sant tukaram ")
+// })
 
-app.use("/",(req,res)=>{
-    res.send("sant dhnyneshwar , ganesh shet , swami samarth , sant tukaram ")
-})
+
+
+
+
+
+
+
 
 
 
